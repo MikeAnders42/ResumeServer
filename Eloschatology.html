@@ -31,7 +31,7 @@
             <div class="col-sm-8">
                 <div id="text-block">
                     <p>
-                        This is a python project that tests Elo matchmaking in a simulated environment. The motivation was simple: games like chess that use Elo matchmaking to estimate player skill can feel frustrating. Players will grind hundreds of games only to see little improvement in their score or ranking. Is the matchmaker to blame? Can Elo systems really misplace people badly, and are they vulnerable to 'Elo Hell' - persistant bands of similarly ranked players with widly disparate skills, making for random and frustrating matches - or are these complaints another example of Dunning–Kruger syndrome?
+                        This is a python project that tests <a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo matchmaking</a> in a simulated environment. The motivation was simple: games like chess that use Elo matchmaking to estimate player skill can feel frustrating. Players will grind hundreds of games only to see little improvement in their score or ranking. Is the matchmaker to blame? Can Elo systems really misplace people badly, and are they vulnerable to 'Elo Hell' - persistant bands of similarly ranked players with widly disparate skills, making for random and frustrating matches - or are these complaints another example of <a href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">Dunning–Kruger</a> syndrome?
                    </p>
                    <p>
                        To test this, I went to <a href="https://ratings.fide.com/">FIDE</a>, who helpfully have a public database of all professional chess player's Elo ratings. Although FIDE puts a hard floor on all rankings, using numpy we can create a randomized distribution that roughly mimics the actual score distribution. These will be our players' true scores.
@@ -96,11 +96,9 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
                 <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_sprd.png">
                 <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_err.png">
                     
-                
-                <div id="text-block">
-                    <a href="https://github.com/milanderson/EloSim">GitHub</a><br>
-                    <a href="https://ratings.fide.com/download.phtml">DataSet</a>
-                </div>
+                <p></p>
+                <a href="https://github.com/milanderson/EloSim">GitHub</a><br>
+                <a href="https://ratings.fide.com/download.phtml">DataSet</a>
             </div>
 
             <div class="col-sm-4">

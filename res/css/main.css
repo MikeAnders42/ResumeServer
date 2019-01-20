@@ -80,6 +80,11 @@
     display: block;
     box-sizing: border-box;
   }
+
+  pre{
+    white-space: normal;
+    word-wrap: normal;
+  }
   
   .kwd1{
     color: rgb(0, 0, 139);

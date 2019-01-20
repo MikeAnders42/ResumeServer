@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project - Elo Eschatology</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Elo-schatology">
+        <meta property="og:author" content="Michael Anderson">
+        <link rel="stylesheet" href="res/css/bootstrap.min.css">
+        <link rel="stylesheet" href="res/css/main.css">
+        <script src="res/js/jquery.min.js"></script>
+        <script src="res/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="m_navbar">
+            <li><div class="navbar_item"><a href="index.html">Home</a></div></li>
+                <li class="dropdown" id="active"><div class="navbar_item">Projects</div>
+                    <div class="dropdown-content">
+                        <div class="navbar_item"><a href="argusclient.html">Argus Client</a></div>
+                        <div class="navbar_item"><a href="CREAMserver.html">CREAM Server</a></div>
+                        <div class="navbar_item"><a href="ID3predictor.html">ID3 Predictor</a></div>
+                        <div class="navbar_item" id="active"><a href="Eschatology.html">Elo Simulator</a></div>
+                    </div>
+                </li>
+            <li><div class="navbar_item"><a href="MikeAndersResume2018.pdf">Resume</a></li></div>
+        </ul>
+
+        <div class="row">
+
+            <div class="col-sm-7">
+                <div id="text-block">
+                    <p>
+                        This is a python project that tests Elo matchmaking in a simulated environment. The motivation was simple: games like chess that use Elo matchmaking to estimate player skill can feel frustrating. Players will grind hundreds of games, see little improvement in their score or ranking. Is the matchmaker to blame? Can Elo systems really misplace people badly, and are they vulnerable to 'Elo Hell' - persistant bands of similarly ranked players with widly disparate skills, making for random and frustrating matches - or are these complaints another example of Dunning–Kruger syndrome?
+                   </p>
+                   <p>
+                       To test this, I went to <a href="https://ratings.fide.com/">FIDE</a>, who helpfully have a public database of all professional player's Elo ratings. Although FIDE puts a hard floor on all rankings, using numpy we can create a randomized distribution that roughly mimics the actual score distribution. These will be our players' true scores.
+                   </p>
+                   <p>
+                       Next, we can initialize our estimated rankings by setting all players to the same rank (here 1690, the median chess ranking). All that's left is to have players match against each other.
+                   </p>
+                   <div class="snippet">
+                       <pre><code>
+                            <span class="kwd2">import</span> EloSim <span class="kwd2">as</span> e
+                            <span class="cmt"># generate players with a randomized true-skill distribution</span>
+                            players = e.initplayers()
+                            <span class="cmt"># Have players match against each other to estimate rank. Because all players
+                                are initialized with the same estimated Elo, we shouldn't match only with skill-brackets</span>
+                            playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=1.0, <span class="arg">rounds</span>=20, <span class="arg">usebrackets</span>=False)
+                        </code></pre>
+                   </div>
+                   <p>
+                        And the player base is initialized! We can see the estimated skill distribution take shape fairly rapidly.
+                        <img class="img-thumbnail" width="50%" src="res/img/gen/Rd10_dist.jpg">
+                        <img class="img-thumbnail" width="50%" src="res/img/gen/Rd20_dist.jpg">
+                   </p>
+                    <a href="https://github.com/milanderson/EloSim">GitHub</a><br>
+                    <a href="https://ratings.fide.com/download.phtml">DataSet</a>
+                </div> 
+            </div>
+
+            <div class="col-sm-4">
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="col-sm-10" id="m_footer">
+                    <hr>
+                    © Michael Anderson 2018 - Powered by <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

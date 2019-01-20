@@ -41,14 +41,16 @@
                    </p>
                 </div>
                    
-                <div class="snippet">
-                    <pre><code>
+                <div class="inline-block">
+                    <div class="snippet">
+                        <pre><code>
 <span class="kwd2">import</span> EloSim <span class="kwd2">as</span> e
 <span class="cmt"># generate players with a randomized true-skill distribution</span>
 players = e.initplayers()
 <span class="cmt"># Have players match against each other to estimate rank. Because all players are initialized with the same estimated Elo, we shouldn't match only with skill-brackets</span>
 playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=1.0, <span class="arg">rounds</span>=20, <span class="arg">usebrackets</span>=False)
-                    </code></pre>
+                        </code></pre>
+                    </div>
                 </div>
                    
                    
@@ -58,8 +60,10 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
                    </p>
                 </div>
             
-                <img class="img-thumbnail" width="45%" src="res/img/Elo/gen/Rd10_dist.png">
-                <img class="img-thumbnail" width="45%" src="res/img/Elo/gen/Rd20_dist.png">
+                <div class="inline-block">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/gen/Rd10_dist.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/gen/Rd20_dist.png">
+                </div>
 
                 <div id="text-block">
                     <p>
@@ -67,11 +71,13 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
                     </p>
                 </div>
                     
-                <div class="snippet">
-                    <pre><code>
-     <span class="cmt"># Play a 100 round tournament where players are roughly matched according to their skill level</span>
-     playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=0.995, <span class="arg">rounds</span>=100, <span class="arg">usebrackets</span>=True)
-                    </code></pre>
+                <div class="inline-block">
+                    <div class="snippet">
+                        <pre><code>
+<span class="cmt"># Play a 100 round tournament where players are roughly matched according to their skill level</span>
+playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=0.995, <span class="arg">rounds</span>=100, <span class="arg">usebrackets</span>=True)
+                        </code></pre>
+                    </div>
                 </div>
                     
                 <div id="text-block">
@@ -80,9 +86,10 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
                     </p>
                 </div>
 
-                <img class="img-thumbnail" width="45%" src="res/img/Elo/chess_rankings.png">
-                <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd25_dist.png">
-                <br/>
+                <div class="inline-block">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/chess_rankings.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd25_dist.png">
+                </div>
 
                 <div id="text-block">
                     <p>
@@ -90,11 +97,13 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
                     </p>
                 </div>
 
-                <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd25_sprd.png">
-                <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd25_err.png">
+                <div class="inline-block">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd25_sprd.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd25_err.png">
 
-                <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_sprd.png">
-                <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_err.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_sprd.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_err.png">
+                </div>
                     
                 <p></p>
                 <a href="https://github.com/milanderson/EloSim">GitHub</a><br>

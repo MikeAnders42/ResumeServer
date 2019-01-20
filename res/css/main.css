@@ -70,6 +70,11 @@
     margin-left: 50px;
 }
 
+#inline-block {
+    position: relative;
+    margin-left: 50px;
+}
+
 /* footer format */
 #m_footer {
     text-align: center;

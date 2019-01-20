@@ -41,22 +41,26 @@
                    </p>
                    <div class="snippet">
                        <pre><code>
-                            <span class="kwd2">import</span> EloSim <span class="kwd2">as</span> e
-                            <span class="cmt"># generate players with a randomized true-skill distribution</span>
-                            players = e.initplayers()
-                            <span class="cmt"># Have players match against each other to estimate rank. Because all players
-                                are initialized with the same estimated Elo, we shouldn't match only with skill-brackets</span>
-                            playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=1.0, <span class="arg">rounds</span>=20, <span class="arg">usebrackets</span>=False)
+<span class="kwd2">import</span> EloSim <span class="kwd2">as</span> e
+<span class="cmt"># generate players with a randomized true-skill distribution</span>
+players = e.initplayers()
+<span class="cmt"># Have players match against each other to estimate rank. Because all players are initialized with the same estimated Elo, we shouldn't match only with skill-brackets</span>
+playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=1.0, <span class="arg">rounds</span>=20, <span class="arg">usebrackets</span>=False)
                         </code></pre>
                    </div>
                    <p>
                         And the player base is initialized! We can see the estimated skill distribution take shape fairly rapidly.
-                        <img class="img-thumbnail" width="50%" src="res/img/gen/Rd10_dist.jpg">
-                        <img class="img-thumbnail" width="50%" src="res/img/gen/Rd20_dist.jpg">
                    </p>
+                </div> 
+            </div>
+            
+            <img class="img-thumbnail" width="50%" src="res/img/gen/Rd10_dist.png">
+            <img class="img-thumbnail" width="50%" src="res/img/gen/Rd20_dist.png">
+            <div class="col-sm-7">
+                    <div id="text-block">
                     <a href="https://github.com/milanderson/EloSim">GitHub</a><br>
                     <a href="https://ratings.fide.com/download.phtml">DataSet</a>
-                </div> 
+                    </div>
             </div>
 
             <div class="col-sm-4">

@@ -73,6 +73,7 @@
 #inline-block {
     position: relative;
     margin-left: 50px;
+    margin-top: 0px;
 }
 
 /* footer format */

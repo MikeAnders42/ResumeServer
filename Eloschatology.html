@@ -47,7 +47,7 @@
 <span class="kwd2">import</span> EloSim <span class="kwd2">as</span> e
 <span class="cmt"># generate players with a randomized true-skill distribution</span>
 players = e.initplayers()
-<span class="cmt"># Have players match against each other to estimate rank. Because all players are initialized with the same estimated Elo, we shouldn't match only with skill-brackets</span>
+<span class="cmt"># Have players match against each other to estimate rank. Because all players are initialized with the same estimated Elo, we should match freely without skill-brackets</span>
 playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=1.0, <span class="arg">rounds</span>=20, <span class="arg">usebrackets</span>=False)
                         </code></pre>
                     </div>
@@ -67,7 +67,7 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
 
                 <div id="text-block">
                     <p>
-                        With a rough estimate of player skills, we can now start making educated matches, where players of similarly estimated skill can face each-other. We will bucket players into 23 skill brackets (as is common in most chess tournaments), allowing for some play outside the brackets. To measure our prediction accuracy, we will look at the overall skill spread, and at the number of matches it would take to move players from their estimated ranking to their true ranking.
+                        With a rough estimate of player skills, we can now start making educated matches, where players of similarly estimated skill can face each other. We will bucket players into 23 skill brackets (as is common in most chess tournaments), allowing for some play outside the brackets. To measure our prediction accuracy, we will look at the overall skill spread, and at the number of matches it would take to move players from their estimated ranking to their true ranking.
                     </p>
                 </div>
                     

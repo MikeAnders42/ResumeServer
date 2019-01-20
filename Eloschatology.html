@@ -31,14 +31,15 @@
             <div class="col-sm-8">
                 <div id="text-block">
                     <p>
-                        This is a python project that tests Elo matchmaking in a simulated environment. The motivation was simple: games like chess that use Elo matchmaking to estimate player skill can feel frustrating. Players will grind hundreds of games, see little improvement in their score or ranking. Is the matchmaker to blame? Can Elo systems really misplace people badly, and are they vulnerable to 'Elo Hell' - persistant bands of similarly ranked players with widly disparate skills, making for random and frustrating matches - or are these complaints another example of Dunning–Kruger syndrome?
+                        This is a python project that tests Elo matchmaking in a simulated environment. The motivation was simple: games like chess that use Elo matchmaking to estimate player skill can feel frustrating. Players will grind hundreds of games only to see little improvement in their score or ranking. Is the matchmaker to blame? Can Elo systems really misplace people badly, and are they vulnerable to 'Elo Hell' - persistant bands of similarly ranked players with widly disparate skills, making for random and frustrating matches - or are these complaints another example of Dunning–Kruger syndrome?
                    </p>
                    <p>
                        To test this, I went to <a href="https://ratings.fide.com/">FIDE</a>, who helpfully have a public database of all professional player's Elo ratings. Although FIDE puts a hard floor on all rankings, using numpy we can create a randomized distribution that roughly mimics the actual score distribution. These will be our players' true scores.
                    </p>
                    <p>
-                       Next, we can initialize our estimated rankings by setting all players to the same rank (here 1690, the median chess ranking). All that's left is to have players match against each other.
+                       Next, we can initialize our estimated rankings by setting all players to the same rank (here 1690, the median chess ranking). All that's left is to have players match against each other in an initial free-for-all.
                    </p>
+                   
                    <div class="snippet">
                        <pre><code>
 <span class="kwd2">import</span> EloSim <span class="kwd2">as</span> e
@@ -48,12 +49,45 @@ players = e.initplayers()
 playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=1.0, <span class="arg">rounds</span>=20, <span class="arg">usebrackets</span>=False)
                         </code></pre>
                    </div>
+                   
                    <p>
                         And the player base is initialized! We can see the estimated skill distribution take shape fairly rapidly.
                    </p>
             
-                    <img class="img-thumbnail" width="45%" src="res/img/gen/Rd10_dist.png">
-                    <img class="img-thumbnail" width="45%" src="res/img/gen/Rd20_dist.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/gen/Rd10_dist.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/gen/Rd20_dist.png">
+                    
+                    <p>
+                        With a rough estimate of player skills, we can now start making educated matches, where players of similarly estimated skill can face each-other. We will bucket players into 23 skill brackets (as is common in most chess tournaments), allowing for some play outside the brackets. To measure our prediction accuracy, we will look at the overall skill spread, and at the number of matches it would take to move players from their estimated ranking to their true ranking.
+                    </p>
+                    
+                    <div class="snippet">
+                            <pre><code>
+     <span class="cmt"># Play a 100 round tournament where players are roughly matched according to their skill level</span>
+     playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=0.995, <span class="arg">rounds</span>=100, <span class="arg">usebrackets</span>=True)
+                             </code></pre>
+                    </div>
+                    
+                    <p>
+                        Almost immediately, we see our distribution tighten to match the a Guassian approximation of the actual FIDE rankings.
+                    </p>
+
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/chess_rankings.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd25_dist.png">
+                    <br>
+
+                    <p>
+                        We can also see that this is fairly accurate to the player's true scores, with a small (but persistent) margin of error across all skill levels.
+                    </p>
+
+                    <img class="img-thumbnail" width="45%" src="res/img/test1/Rd25_sprd.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/test1/Rd25_err.png">
+                    
+                    <br>
+
+                    <img class="img-thumbnail" width="45%" src="res/img/test1/Rd75_sprd.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/test1/Rd75_err.png">
+                    
                     <br>
                     <a href="https://github.com/milanderson/EloSim">GitHub</a><br>
                     <a href="https://ratings.fide.com/download.phtml">DataSet</a>

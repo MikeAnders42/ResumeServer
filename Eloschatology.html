@@ -56,7 +56,7 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
                    
                 <div id="text-block">
                    <p>
-                        And the player base is initialized! We can see the estimated skill distribution take shape fairly rapidly.
+                        And the player base is initialized! We can see the estimated skill distribution take shape within 20 rounds of play.
                    </p>
                 </div>
             
@@ -67,7 +67,7 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
 
                 <div id="text-block">
                     <p>
-                        With a rough estimate of player skills, we can now start making educated matches, where players of similarly estimated skill can face each other. We will bucket players into 23 skill brackets (as is common in most chess tournaments), allowing for some play outside the brackets. To measure our prediction accuracy, we will look at the overall skill spread, and at the number of matches it would take to move players from their estimated ranking to their true ranking.
+                        With a rough estimate of player skills, we can now start making educated matches, where players of similarly estimated skill can face each other. We will bucket players into 23 skill brackets (as is common in most chess tournaments), allowing for some play outside the brackets. To measure our prediction accuracy, we will look at the overall skill spread, and at the number of matches it would take to move players from their estimated ranked ordering to their true ranked ordering.
                     </p>
                 </div>
                     
@@ -75,7 +75,7 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
                     <div class="snippet">
                         <pre><code>
 <span class="cmt"># Play a 100 round tournament where players are roughly matched according to their skill level</span>
-playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=0.995, <span class="arg">rounds</span>=100, <span class="arg">usebrackets</span>=True)
+play_tournament(players, <span class="arg">team_size</span>=1, <span class="arg">uncertainty</span>=32, <span class="arg">learning_rate</span>=0.995, <span class="arg">rounds</span>=100, <span class="arg">usebrackets</span>=True)
                         </code></pre>
                     </div>
                 </div>
@@ -103,6 +103,12 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
 
                     <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_sprd.png">
                     <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_err.png">
+                </div>
+
+                <div id="text-block">
+                    <p>
+                        There are spikes in the error margins, but they are not persistant and fairly small. When we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are small but persistent across all skill bands. So far we've used wide bands, matchmaking with anyone within 435 (10000 players / 23 bands) places in the sorted ranking. If we switch to a more strict match-maker that attempts to pair people with more tightly estimated bands, we see problems arise.
+                    </p>
                 </div>
                     
                 <div id="inline-block">

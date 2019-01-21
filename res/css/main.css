@@ -88,7 +88,7 @@
   }
 
 figure{
-    display: table;
+    display: inline-block;
 }
 
 figcaption{

@@ -93,7 +93,7 @@ play_tournament(players, <span class="arg">team_size</span>=1, <span class="arg"
 
                 <div id="text-block">
                     <p>
-                        We can also see that this is roughly accurate to the player's true scores, with a moderate (but persistent) margin of error across all skill levels.
+                        We can also see that this is roughly accurate to the player's true scores, with a moderate (but persistent) margin of error across all skill levels. Even when we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are small but persistent across all skill bands.
                     </p>
                 </div>
 
@@ -123,9 +123,6 @@ play_tournament(players, <span class="arg">team_size</span>=1, <span class="arg"
                 </div>
 
                 <div id="text-block">
-                    <p>
-                        When we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are small but persistent across all skill bands.
-                    </p>
                     <p>
                         So far we've used wide matchmaking bands, matching players with anyone within 435 (10000 players / 23 bands) places in the sorted ranking. Let's switch to a stricter match-maker that attempts to pair players within tighter bands.
                     </p>

@@ -72,6 +72,7 @@
 
 #inline-block {
     position: relative;
+    display: block;
     margin-left: 50px;
     margin-top: 0px;
 }
@@ -89,7 +90,6 @@
 
 figcaption{
     word-wrap:normal;
-    text-align: center;
     font-size: 10px;
 }
 

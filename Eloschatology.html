@@ -114,17 +114,34 @@ play_tournament(players, <span class="arg">team_size</span>=1, <span class="arg"
                 <div id="inline-block">
                     <figure style="width:45%;">
                         <img class="img-thumbnail" src="res/img/slot.jpg">
-                        <figcaption> A 'near miss' - image courtesy of Vox.com </figcaption>
+                        <figcaption> A 'near miss' - Image courtesy of Vox.com </figcaption>
                     </figure>
                     <figure style="width:45%;">
                         <img class="img-thumbnail" src="res/img/Elo/test1/Rd75_errW.png">
-                        <figcaption> Deceptively far - 3 matches is more likely to be 30 </figcaption>
+                        <figcaption> Deceptively far. 3 matches is more likely to be 30 </figcaption>
                     </figure>
                 </div>
 
                 <div id="text-block">
                     <p>
-                        When we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are small but persistent across all skill bands. So far we've used wide matchmaking bands, matching players with anyone within 435 (10000 players / 23 bands) places in the sorted ranking. Let's switch to a stricter match-maker that attempts to pair players within tighter bands.
+                        When we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are small but persistent across all skill bands.
+                    </p>
+                    <p>
+                        So far we've used wide matchmaking bands, matching players with anyone within 435 (10000 players / 23 bands) places in the sorted ranking. Let's switch to a stricter match-maker that attempts to pair players within tighter bands.
+                    </p>
+                </div>
+
+                <div id="inline-block">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test2/Rd25_sprd.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test2/Rd25_err.png">
+
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test2/Rd75_sprd.png">
+                    <img class="img-thumbnail" width="45%" src="res/img/Elo/test2/Rd75_err.png">
+                </div>
+
+                <div id="text-block">
+                    <p>
+                        While tighter matching will initially have a wider skill spread and more randomness, it eventually converges to a much narrower error variance than the more randomized matchmaking. Tuning the learning rate and uncertainty has a similar effect - making extreme (good and bad) luck streaks less impactful, and speeding convergence.
                     </p>
                 </div>
 

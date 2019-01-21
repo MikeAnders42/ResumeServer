@@ -93,7 +93,7 @@ play_tournament(players, <span class="arg">team_size</span>=1, <span class="arg"
 
                 <div id="text-block">
                     <p>
-                        We can also see that this is fairly accurate to the player's true scores, with a small (but persistent) margin of error across all skill levels.
+                        We can also see that this is roughly accurate to the player's true scores, with a moderate (but persistent) margin of error across all skill levels.
                     </p>
                 </div>
 
@@ -107,10 +107,27 @@ play_tournament(players, <span class="arg">team_size</span>=1, <span class="arg"
 
                 <div id="text-block">
                     <p>
-                        There are spikes in the error margins, but they are not persistant and fairly small. When we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are small but persistent across all skill bands. So far we've used wide bands, matchmaking with anyone within 435 (10000 players / 23 bands) places in the sorted ranking. If we switch to a more strict match-maker that attempts to pair people with more tightly estimated bands, we see problems arise.
+                        One insidious detail of getting to one's true rank: although players average about 30 matches from their true ranked order, the number of consecutive wins or losses it would take is much lower, around 4. While four consecutive wins is unlikely against similarly skilled opposition, this isn't always intuitive. Slot machines take advantage of this by frequently showing an off-by-one Jackpot miss, convincing players that a big payout is likely. Elo systems that display points-won or lost, and have strong bracketing are probably similarly addictive. This might explain the frustrated players who see their easy expectations meet hard reality.
                     </p>
                 </div>
-                    
+
+                <div id="inline-block">
+                    <figure>
+                        <img class="img-thumbnail" width="45%" src="res/img/slot.jpg">
+                        <figcaption> A 'near miss' - image courtesy of Vox.com </figcaption>
+                    </figure>
+                    <figure>
+                        <img class="img-thumbnail" width="45%" src="res/img/Elo/test1/Rd75_err.png">
+                        <figcaption> Deceptively far - 3 matches is more likely to be 30 </figcaption>
+                    </figure>
+                </div>
+
+                <div id="text-block">
+                    <p>
+                        When we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are small but persistent across all skill bands. So far we've used wide matchmaking bands, matching players with anyone within 435 (10000 players / 23 bands) places in the sorted ranking. Let's switch to a stricter match-maker that attempts to pair players within tighter bands.
+                    </p>
+                </div>
+
                 <div id="inline-block">
                     <p></p><br/>
                     <p></p><br/>

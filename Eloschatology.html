@@ -93,7 +93,26 @@ play_tournament(players, <span class="arg">team_size</span>=1, <span class="arg"
 
                 <div id="text-block">
                     <p>
-                        We can also see that this is roughly accurate to the player's true scores, with a moderate (but persistent) margin of error across all skill levels. Even when we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are moderate and persistent across all skill bands, with the greatest fluctuations at the tails of the distribution where players are sparse.
+                        To measure accuracy, we will look at the distance between a player's estimated ranked ordering and their true ranked ordering. This distance can be measured in the expected number of matches to move to the true ranked order.
+                    </p>
+                </div>
+
+                <div id="inline-block">
+                    <div class="snippet">
+                        <pre><code>
+<span class="cmt"># get elo distance from true rank</span>
+raw_dist = PUB_ELOS[<span class="kwd1">self</span>.id] - PUB_ELOS[playerlist[<span class="kwd1">self</span>.id].id]
+
+expected_match_val = <span class="typ">float</span>((true_winchance*win_amount)) + <span class="typ">float</span>((1.0 - true_winchance)*loss_amount)
+
+<span class="kwd1">self</span>.rank_dist = raw_dist / expected_match_val
+                        </code></pre>
+                    </div>
+                </div>
+
+                <div id="text-block">
+                    <p>
+                            We can also see that this is roughly accurate to the player's true scores, with a moderate (but persistent) margin of error across all skill levels. Even when we expand the team size to 5 person teams (used in online games like League of Legends), the results are not significantly different; error margins are moderate and persistent across all skill bands, with the greatest fluctuations at the tails of the distribution where players are sparse.
                     </p>
                 </div>
 

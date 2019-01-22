@@ -31,7 +31,7 @@
             <div class="col-sm-8">
                 <div id="text-block">
                     <p>
-                        Recently I've put together a python project that tests <a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo matchmaking</a> in a simulated environment. Elo matchmakers, for those unfamiliar, are used in competitive games like chess. They can choose which players are matched, and by observing who wins or loses, estimates of each player's skill level. These systems suffer a common complaint: players grind hundreds of games and barely budge the matchmaker's estimates. Is the matchmaker to blame? Can Elo systems really misplace people badly, and are they vulnerable to 'Elo Hell' - persistant bands of players with closely estimated skills, but widely disparate true skills, making for random and frustrating matches - or are these complaints another example of <a href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">Dunning–Kruger</a> syndrome?
+                        Recently I've put together a python project that tests <a href="https://en.wikipedia.org/wiki/Elo_rating_system">Elo matchmaking</a> in a simulated environment. Elo matchmakers, for those unfamiliar, are used in competitive games like chess. They can choose which players are matched, and by observing who wins or loses, estimates each player's skill level. These systems suffer a common complaint: players grind hundreds of games and barely budge the matchmaker's estimates. Is the matchmaker to blame? Can Elo systems really misplace people badly, and are they vulnerable to 'Elo Hell' - persistant bands of players with closely estimated skills, but widely disparate true skills, making for random and frustrating matches - or are these complaints another example of <a href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">Dunning–Kruger</a> syndrome?
                    </p>
                    <p>
                         To test this, I went to <a href="https://ratings.fide.com/">FIDE</a>, who helpfully have a public database of all professional chess player's Elo ratings. Although FIDE puts a hard floor on all rankings, using numpy we can create a randomized distribution that roughly mimics the actual score distribution. These will be our players' true scores.
@@ -67,7 +67,7 @@ playtournament(players, <span class="arg">team_size</span>=1, <span class="arg">
 
                 <div id="text-block">
                     <p>
-                        With a rough estimate of player skills, we can now start making educated matches, where players of similarly estimated skill can face each other. We will bucket players into 23 skill brackets (as is common in most chess tournaments), allowing for some play outside the brackets. To measure our prediction accuracy, we will look at the overall skill spread, and at the number of matches it would take to move players from their estimated ranked ordering to their true ranked ordering.
+                        With a rough estimate of player skills, we can now start making educated matches, where players of similarly estimated skill can face each other. We will bucket players into 23 skill brackets (as is common in most chess tournaments), allowing for some play outside the brackets.
                     </p>
                 </div>
                     
@@ -93,19 +93,8 @@ play_tournament(players, <span class="arg">team_size</span>=1, <span class="arg"
 
                 <div id="text-block">
                     <p>
-                        To measure accuracy, we will look at the distance between a player's estimated ranked ordering and their true ranked ordering. This distance can be measured in the expected number of matches to move to the true ranked order.
+                            To measure our prediction accuracy, we will look at the overall skill spread, and at the number of matches it would take to move players from their estimated ranked ordering to their true ranked ordering.
                     </p>
-                </div>
-
-                <div id="inline-block">
-                    <div class="snippet">
-                        <pre><code>
-<span class="cmt"># get the elo distance from true rank</span>
-raw_dist = PUB_ELOS[<span class="kwd1">self</span>.id] - PUB_ELOS[playerlist[<span class="kwd1">self</span>.id].id]
-expected_match_val = <span class="typ">float</span>((true_winchance*win_amount)) + <span class="typ">float</span>((1.0 - true_winchance)*loss_amount)
-<span class="kwd1">self</span>.rank_dist = raw_dist / expected_match_val
-                        </code></pre>
-                    </div>
                 </div>
 
                 <div id="text-block">

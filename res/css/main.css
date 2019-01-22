@@ -64,10 +64,13 @@
 }
 
 #text-block {  
-    text-indent: 50px;
     position: relative;
     margin-top: 20px;
     margin-left: 50px;
+}
+
+#text-block p{
+    text-indent: 50px;
 }
 
 #inline-block {

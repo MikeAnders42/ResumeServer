@@ -221,6 +221,14 @@ nav ul li a:hover {
   color: #54a892;
 }
 
+#footer_line{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 90%;
+    border-bottom: 1px rgba(84, 168, 146, 0.75);
+    margin: auto;
+}
+
 .shadow {
   background: #fff;
   background: -webkit-linear-gradient(#fff,#f0f0f0);

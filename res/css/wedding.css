@@ -72,10 +72,11 @@ img {
   font-size: 60px;
 }
 .container img {
+  display:block;
+  margin:auto;
   height: auto;
   max-width: 100%;
   vertical-align: baseline;
-  width: auto;
 }
 .container p {
   color: #727272;

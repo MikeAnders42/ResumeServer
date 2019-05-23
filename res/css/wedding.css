@@ -28,7 +28,6 @@ img {
   margin-right: auto;
   height: auto;
   vertical-align: baseline;
-  width: 100%;
 }
 
 .btn {
@@ -73,7 +72,8 @@ img {
 }
 .container img {
   display:block;
-  margin:auto;
+  margin-left: auto;
+  margin-right: auto;
   height: auto;
   max-width: 100%;
   vertical-align: baseline;
@@ -136,28 +136,6 @@ img {
 .container .us  h2 {
       font-size: 53px;
  }
-
-.flower {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: 49%;
-  @media (max-width: 615px) {
-    width: 100%;
-  }
-  img {
-      border-radius: 50%;
-      border: 5px solid #54a892;
-      width: 35%;
-    }
-    h3 {
-      color: #8F8F8F;
-      font-family: 'Great Vibes';
-      font-size: 20px;
-      margin: 20px auto;
-      text-align: center;
-    }
-}
 
 .header {
   background: white;
@@ -465,7 +443,7 @@ iframe, object, embed{max-width: 100%;}
   }
 }
 
-#footer_line{
+#wedding_footer{
     padding-top: 25px;
     padding-bottom: 25px;
     width: 90%;

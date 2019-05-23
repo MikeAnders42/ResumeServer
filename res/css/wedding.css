@@ -447,6 +447,6 @@ iframe, object, embed{max-width: 100%;}
     padding-top: 25px;
     padding-bottom: 25px;
     width: 90%;
-    border-bottom: 1px rgba(84, 168, 146, 0.75);
+    border-bottom: 2px rgba(84, 168, 146, 0.75);
     margin: auto;
 }

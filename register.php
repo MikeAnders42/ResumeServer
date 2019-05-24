@@ -24,7 +24,7 @@
         } else {
           echo 'This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.';
         }
-        $conn->close();
+        $connect->close();
       }
     ?>
   </body>

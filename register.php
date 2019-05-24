@@ -9,9 +9,9 @@
   $database = 'dbs75889';
   $user_name = 'dbu41062';
   $password = '!Foxfox11';
-  $connect = mysql_connect($host_name, $user_name, $password, $database);
+  $connect = mysqli_connect($host_name, $user_name, $password, $database);
 
-  if (mysql_errno()) {
+  if (mysqli_connect_errno()) {
     echo 'There was a connection error. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.';
   } else {
 

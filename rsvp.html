@@ -84,6 +84,10 @@
             let name = getUrlVars('name');
             let key = getUrlVars('key');
             
+            console.log(name);
+            console.log(key);
+            console.log(window.location.href);
+
             if(!name || !key){
               window.location.href = "wedding";
             }

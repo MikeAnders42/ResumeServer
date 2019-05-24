@@ -16,7 +16,7 @@
   } else {
 
     $sql = "UPDATE Registry SET NumGoing = " . $numguests . ", FoodPref = '" . $foodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "', ID='" + $key + "'";
-    if ($conn->query($sql) === TRUE) {
+    if ($connect->query($sql) === TRUE) {
       echo 'Thank you for the RSVP. Wedding details are at the link above.';
     } else {
       echo 'This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.';

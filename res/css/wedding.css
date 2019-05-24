@@ -446,7 +446,103 @@ iframe, object, embed{max-width: 100%;}
 #wedding_footer{
     padding-top: 25px;
     padding-bottom: 25px;
-    width: 90%;
-    border-bottom: 2px rgba(84, 168, 146, 0.75);
-    margin: auto;
+    width: 70%;
+    margin-left:auto;
+    margin-right:auto;
+    border-top: 2px solid rgba(84, 168, 146, 0.75);
+}
+
+.input_block{
+    font-family: 'Georgia';
+    font-size: 18px;
+    color: #54a892;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+}
+.input_block input{
+    height: 28px;
+    width: 198px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #54a892;
+}
+.input_block button{
+    color: white;
+    font-weight: bold;
+    font-family: 'Muli';
+    font-size: 14px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    height: 35px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #54a892;
+    border: 0px;
+    border-radius: 2px;
+}
+.input_block button:hover{
+    color: #54a892;
+    background-color: white;
+    border: 1px solid #54a89270;
+}
+label {
+  float: left;
+  height: 40px;
+  width: 150px;
+  color: #7f8c8d;
+}
+.mid{
+  margin-left: calc(50% - 180px);
+  margin-right: auto;
+}
+.line{
+  margin-top: 15px;
+}
+.styled-select {
+   margin-top: -2px;
+   float: left;
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 200px;
+}
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-family: 'Georgia';
+   font-size: 16px;
+   height: 29px;
+   padding: 5px;
+   width: 219px;
+}
+.test{
+  width: 180px;
+  font-size: 16px;
+  font-family: 'Georgia';
+  background-color: #54a892;
+  border: 0px;
+  border-radius: 2px;
+}
+.test:active, .test:hover{
+  background-color: #54a892;
+}
+.semi-square {
+   border-radius: 5px;
+}
+.blue { 
+    background-color: #54a892;
+}
+.divider{
+  width: 100%;
+  border-top: 2px solid #54a892;
+  margin-left:auto;
+  margin-right:auto;
+  transform: 0.4s;
 }

@@ -1,7 +1,5 @@
-<html>
-<body>
-
 <?php
+  $key = $POST_['key'];
   $name = $POST_['name'];
   $numguests = $POST_['numguests'];
   $foodpref = $POST_['foodpref'];
@@ -14,18 +12,15 @@
   $connect = mysql_connect($host_name, $user_name, $password, $database);
 
   if (mysql_errno()) {
-    echo '<p>There was a connection error. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</p >';
+    echo 'There was a connection error. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.';
   } else {
 
-    $sql = "UPDATE Registry SET NumGoing = " . $numguests . ", FoodPref = '" . $foodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "'";
+    $sql = "UPDATE Registry SET NumGoing = " . $numguests . ", FoodPref = '" . $foodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "', ID='" + $key + "'";
     if ($conn->query($sql) === TRUE) {
-      
+      echo 'Thank you for the RSVP. Wedding details are at the link above.';
     } else {
-
+      echo 'This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.';
     }
     $conn->close();
   }
 ?>
-
-</body>
-</html>

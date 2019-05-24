@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wedding RESVP</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Wedding">
+        <meta property="og:author" content="Michael Anderson">
+        <link rel="stylesheet" href="res/css/wedding.css">
+        <script src="res/js/jquery.min.js"></script>
+        <script>$(document).ready(function() {
+                var hamburger = $('.menu__icon');
+                hamburger.click(function() {
+                   hamburger.toggleClass('active');
+                   return false;
+                });
+                $('.menu__icon').bind('click', function(){
+                    if($('.menu__icon').hasClass('active')){
+                        $('.mobile-nav').css({
+                            'opacity':'1',
+                        });
+                        $('nav').css({
+                            'box-shadow':'none',
+                        });
+                    } else {
+                        $('.mobile-nav').css({
+                            'opacity':'0',
+                        });
+                        $('nav').css({
+                            'box-shadow':'rgba(0,0,0,0.270588) 0px 5px 5px',
+                        });
+                    }
+                })
+                $('.mobile-nav a').on('click',function(){
+                    $('.mobile-nav').css({
+                        'opacity':'0',
+                    });
+                    $('nav').css({
+                      'box-shadow':'rgba(0,0,0,0.270588) 0px 5px 5px',
+                  });
+                    $('.menu__icon').removeClass('active');
+                })
+                   
+              });
+              
+              $(document).ready(function(){
+                   function scrollNav() {
+                    $('nav a').click(function(){  
+                      //Toggle Class
+                      $(".active-link").removeClass("active-link");      
+                      $(this).closest('li').addClass("active-link");
+                      var theClass = $(this).attr("class");
+                      $('.'+theClass).parent('li').addClass('active-link');
+                      //Animate
+                      $('html, body').stop().animate({
+                          scrollTop: $( $(this).attr('href') ).offset().top - 160
+                      }, 400);
+                      return false;
+                    });
+                    $('.scrollTop a').scrollTop();
+                  }
+                  scrollNav();
+              })
+              
+              $(document).scroll(function(){
+                if($(this).scrollTop() > 355) {
+                  $('.top').css({
+                    'opacity':'1',
+                  });
+                } else {
+                  $('.top').css({
+                    'opacity':'0',
+                  });
+                }
+              })
+              
+            function getUrlVars() {
+              var vars = {};
+              var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+              });
+              return vars;
+            }
+            let name = getUrlVars('name');
+            let key = getUrlVars('key');
+            
+            if(!name || !key){
+              window.location.href = "wedding";
+            }
+
+            document.getElementById('subbtn').onclick = function(){
+              let allergies = document.getElementById('allergies').value;
+              let foodpref = document.getElementById('foodpref').value;
+              let numguests = document.getElementById('numguests').value;
+            
+              document.getElementById('subbtn').onclick = function(){}
+            
+              let xhr = new XMLHttpRequest();
+              xhr.open("POST", 'register.php', true);
+              xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+              xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    console.log(this);
+                }
+              }
+              xhr.send("key=" + key + "&name=" + name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests);
+            }
+
+            function DisplayRSVPMsg(msg){
+                $('.mid').slideUp(400, function(){ $('.mid').remove(); });
+                $(msg).hide().appendTo('.divider').slideDown(400);
+                $('.divider').css('padding-top', '25px');
+                $('#subbtn').fadeOut(400, function(){ $('#subbtn').remove(); });
+            }
+
+              </script>
+    </head>
+    <body>
+        <nav role='navigation'>
+            <ul>
+                <li>
+                    <a href="#wedding">The Wedding</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header">
+            <h1>
+                Mike & Tina
+            </h1>
+            <h2>
+                August 19, 2019
+            </h2>
+        </div>
+        <div class="container">
+            <div class="shadow i1">
+                <div class='input_block'>
+                    <div class='mid'>
+                        <div class='line'>
+                            <label> Attending: </label>
+                            <div class="styled-select blue semi-square">
+                                <select id="numguests">
+                                <option class='test' value="0">Not Attending</option>
+                                <option class='test' value="1">1</option>
+                                <option class='test' value="2">2</option>
+                                <option class='test' value="3">3</option>
+                                </select>
+                                </div></div><br></br>
+                        
+                        <div class='line'>
+                            <label> Food Preference: </label>
+                            <div class="styled-select blue semi-square">
+                                <select id='foodpref'>
+                                <option class='test' value="None">-</option>
+                                <option class='test' value="Meat">Meat</option>
+                                <option class='test' value="Seafood">Seafood</option>
+                                <option class='test' value="Vegetarian">Vegetarian</option>
+                                </select>
+                                </div></div><br></br>
+                    
+                        <div class='line'>
+                            <label> Allergies: </label><input id="allergies"></input><br></div>
+                    </div>
+                    <div class='divider'></div>
+                    <button id='subbtn'>RSVP</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

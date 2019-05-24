@@ -12,14 +12,14 @@
   $connect = mysqli_connect($host_name, $user_name, $password, $database);
 
   if (mysqli_connect_errno()) {
-    echo 'There was a connection error. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.';
+    echo '<div>There was a connection error. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
   } else {
 
     $sql = "UPDATE Registry SET NumGoing = " . $numguests . ", FoodPref = '" . $foodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "', ID='" + $key + "'";
     if ($connect->query($sql) === TRUE) {
-      echo 'Thank you for the RSVP. Wedding details are at the link above.';
+      echo '<div>Thank you for the RSVP. Wedding details are at the link above.</div>';
     } else {
-      echo 'This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.';
+      echo '<div>This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
     }
     $connect->close();
   }

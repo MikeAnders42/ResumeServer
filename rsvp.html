@@ -81,11 +81,10 @@
               });
               return vars;
             }
-            let name = getUrlVars('name');
-            let key = getUrlVars('key');
+            let args = getUrlVars();
             
-            console.log(name);
-            console.log(key);
+            console.log(args.name);
+            console.log(args.key);
             console.log(window.location.href);
 
             if(!name || !key){
@@ -105,11 +104,11 @@
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhr.onreadystatechange = function() {
                     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                        console.log(this.responseText);
+                        console.log(this);
                         DisplayRSVPMsg(String(this.responseText));
                     }
                 }
-                xhr.send("key=" + key + "&name=" + name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests);
+                xhr.send("key=" + args.key + "&name=" + args.name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests);
                 }}, 100);
 
             function DisplayRSVPMsg(msg){

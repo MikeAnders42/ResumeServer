@@ -17,8 +17,8 @@
     echo '<div>There was a connection error. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
   } else {
 
-    $sql = "UPDATE Registry SET NumGoing = " . $numguests . ", FoodPref = '" . $foodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "', ID = '" + $key + "'";
-    echo '<div>' . $sql . '</div>'
+    $sql = 'UPDATE Registry SET NumGoing = ' . $numguests . ", FoodPref = '" . $foodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "', ID = '" . $key . "'";
+    echo '<div>' . $sql . '</div>';
     if ($connect->query($sql) === TRUE) {
       echo '<div>Thank you for the RSVP. Wedding details are at the link above.</div>';
     } else {

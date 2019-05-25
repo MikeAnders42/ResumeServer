@@ -16,7 +16,8 @@
   } else {
 
     $sql = "SELECT * FROM Registry WHERE Name = '" . $name . "' AND ID = '" . $key . "'";
-    if ($connect->query($sql) === FALSE){
+    $exists = $connect->query($sql)
+    if ($exists === FALSE or $exists->num_rows === 0){
       echo '<div>This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
       exit;
     }

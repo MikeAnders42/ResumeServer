@@ -1,9 +1,9 @@
 <?php
-  $key = $POST_['key'];
-  $name = $POST_['name'];
-  $numguests = $POST_['numguests'];
-  $foodpref = $POST_['foodpref'];
-  $allergies = $POST_['allergies'];
+  $key = $_POST['key'];
+  $name = $_POST['name'];
+  $numguests = $_POST['numguests'];
+  $foodpref = $_POST['foodpref'];
+  $allergies = $_POST['allergies'];
 
   echo '<div>' . $key . $name . $numguests . $foodpref . $allergies . '</div>';
 

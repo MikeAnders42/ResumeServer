@@ -5,7 +5,7 @@
   $foodpref = $POST_['foodpref'];
   $allergies = $POST_['allergies'];
 
-  echo '<div>' + $key + $name + $numguests + $foodpref + $allergies + '</div>';
+  echo '<div>' . $key . $name . $numguests . $foodpref . $allergies . '</div>';
 
   $host_name = 'db5000081171.hosting-data.io';
   $database = 'dbs75889';

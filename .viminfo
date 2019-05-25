@@ -22,10 +22,10 @@
 
 # Registers:
 ""-	CHAR	0
-	 
+	.
 
 # File marks:
-'0  3  8  ~/.gitignore
+'0  3  1  ~/.gitignore
 '1  1  15  ~/.htaccess
 '2  21  24  ~/rsvp.html
 '3  5  27  ~/.htaccess
@@ -37,7 +37,7 @@
 '9  174  45  ~/Eloschatology.html
 
 # Jumplist (newest first):
--'  3  8  ~/.gitignore
+-'  3  1  ~/.gitignore
 -'  1  0  ~/.gitignore
 -'  1  15  ~/.htaccess
 -'  21  24  ~/rsvp.html
@@ -134,16 +134,14 @@
 -'  1  0  ~/ResumeServer/server.py
 -'  10  44  ~/ResumeServer/server.py
 -'  1  0  ~/ResumeServer/server.py
--'  10  44  ~/ResumeServer/server.py
--'  1  0  ~/ResumeServer/server.py
 
 # History of marks within files (newest to oldest):
 
 > ~/.gitignore
-	"	3	8
-	^	3	9
-	.	3	9
-	+	3	9
+	"	3	1
+	^	3	2
+	.	3	1
+	+	3	1
 
 > ~/.htaccess
 	"	1	15

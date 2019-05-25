@@ -15,6 +15,12 @@
     echo '<div>There was a connection error. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
   } else {
 
+    $sql = "SELECT * FROM Registry WHERE Name = '" . $name . "' AND ID = '" . $key . "'";
+    if ($connect->query($sql) === FALSE){
+      echo '<div>This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
+      exit;
+    }
+
     $sql = 'UPDATE Registry SET NumGoing = ' . $numguests . ", FoodPref = '" . $foodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "' AND ID = '" . $key . "'";
     if ($connect->query($sql) === TRUE) {
       echo '<div>Thank you for the RSVP. Wedding details are at the link above.</div>';

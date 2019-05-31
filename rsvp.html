@@ -85,37 +85,33 @@
 
             setTimeout(function(){
                 document.getElementById('subbtn').onclick = function(){
-                let allergies = document.getElementById('allergies').value;
-                let foodpref = document.getElementById('foodpref').value;
-                let numguests = document.getElementById('numguests').value;
-                let guestname = document.getElementById('guestname').value;
+                    let allergies = document.getElementById('allergies').value;
+                    let foodpref = document.getElementById('foodpref').value;
+                    let numguests = document.getElementById('numguests').value;
+                    let guestname = document.getElementById('guestname').value;
+
+                    document.getElementById('subbtn').onclick = function(){}
+                    
+                    let xhr = new XMLHttpRequest();
+                    xhr.open("POST", 'register.php', true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function() {
+                        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                            console.log(this);
+                            DisplayRSVPMsg(String(this.responseText));
+                        }
+                    }
+                    xhr.send("key=" + args.key + "&name=" + args.name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests + "&guestname=" + guestsname);
+                }
                 
-                
-                console.log('aaaaaaaaaaaaaaaaaa');
-                $('#guestpopopt').css('background-color', 'red');
-                console.log('bbbbbbbbbbbbbbbbbbb');
-                console.log($('#guestpopopt'));
+                $('#guestpopopt').hide();
                 document.getElementById('numguests').onchange = function(){
                     if (document.getElementById('numguests').value == '2'){
                         $('#guestpopopt').slideDown();
                     } else {
                         $('#guestpopopt').slideUp();
-                    }
-                }
-
-                document.getElementById('subbtn').onclick = function(){}
-                
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", 'register.php', true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function() {
-                    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                        console.log(this);
-                        DisplayRSVPMsg(String(this.responseText));
-                    }
-                }
-                xhr.send("key=" + args.key + "&name=" + args.name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests + "&guestname=" + guestsname);
-                }}, 100);
+                    }}
+                }, 100);
 
             function DisplayRSVPMsg(msg){
                 $('.mid').slideUp(400, function(){ $('.mid').remove(); });

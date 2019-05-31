@@ -90,7 +90,8 @@
                 let numguests = document.getElementById('numguests').value;
                 let guestname = document.getElementById('guestname').value;
                 
-                $('#guestpopopt').hide()
+                $('#guestpopopt').css('background-color', 'red')
+                console.log($('#guestpopopt'))
                 document.getElementById('numguests').onchange = function(){
                     if (document.getElementById('numguests').value == '2'){
                         $('#guestpopopt').slideDown();
@@ -153,7 +154,7 @@
                                 </div></div><br></br>
                     
                         <div class='line' id='guestpopopt'>
-                            <label> Name: </label><input id="guestname"></input></div>
+                            <label> Guest Name: </label><input id="guestname"></input></div>
 
                         <div class='line'>
                             <label> Food Preference: </label>

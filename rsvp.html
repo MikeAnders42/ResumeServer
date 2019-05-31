@@ -90,12 +90,12 @@
                 let numguests = document.getElementById('numguests').value;
                 let guestname = document.getElementById('guestname').value;
                 
-                $('#numguests').hide()
+                $('#guestpopopt').hide()
                 document.getElementById('numguests').onchange = function(){
                     if (document.getElementById('numguests').value == '2'){
-                        $('#numguests').slideDown();
+                        $('#guestpopopt').slideDown();
                     } else {
-                        $('#numguests').slideUp();
+                        $('#guestpopopt').slideUp();
                     }
                 }
 
@@ -152,8 +152,8 @@
                                 </select>
                                 </div></div><br></br>
                     
-                        <div class='line'>
-                            <label> Name: </label><input id="guestname"></input><br></div>
+                        <div class='line' id='guestpopopt'>
+                            <label> Name: </label><input id="guestname"></input></div>
 
                         <div class='line'>
                             <label> Food Preference: </label>

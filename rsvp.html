@@ -88,7 +88,17 @@
                 let allergies = document.getElementById('allergies').value;
                 let foodpref = document.getElementById('foodpref').value;
                 let numguests = document.getElementById('numguests').value;
+                let guestname = document.getElementById('guestname').value;
                 
+                $('#numguests').hide()
+                document.getElementById('numguests').onchange = function(){
+                    if (document.getElementById('numguests').value == '2'){
+                        $('#numguests').slideDown();
+                    } else {
+                        $('#numguests').slideUp();
+                    }
+                }
+
                 document.getElementById('subbtn').onclick = function(){}
                 
                 let xhr = new XMLHttpRequest();
@@ -100,7 +110,7 @@
                         DisplayRSVPMsg(String(this.responseText));
                     }
                 }
-                xhr.send("key=" + args.key + "&name=" + args.name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests);
+                xhr.send("key=" + args.key + "&name=" + args.name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests + "&guestname=" + guestsname);
                 }}, 100);
 
             function DisplayRSVPMsg(msg){
@@ -137,12 +147,14 @@
                             <div class="styled-select blue semi-square">
                                 <select id="numguests">
                                 <option class='test' value="0">Not Attending</option>
-                                <option class='test' value="1">1</option>
-                                <option class='test' value="2">2</option>
-                                <option class='test' value="3">3</option>
+                                <option class='test' value="1">Attending</option>
+                                <option class='test' value="2">+1</option>
                                 </select>
                                 </div></div><br></br>
-                        
+                    
+                        <div class='line'>
+                            <label> Name: </label><input id="guestname"></input><br></div>
+
                         <div class='line'>
                             <label> Food Preference: </label>
                             <div class="styled-select blue semi-square">

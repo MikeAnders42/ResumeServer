@@ -90,8 +90,11 @@
                 let numguests = document.getElementById('numguests').value;
                 let guestname = document.getElementById('guestname').value;
                 
-                $('#guestpopopt').css('background-color', 'red')
-                console.log($('#guestpopopt'))
+                
+                console.log('aaaaaaaaaaaaaaaaaa');
+                $('#guestpopopt').css('background-color', 'red');
+                console.log('bbbbbbbbbbbbbbbbbbb');
+                console.log($('#guestpopopt'));
                 document.getElementById('numguests').onchange = function(){
                     if (document.getElementById('numguests').value == '2'){
                         $('#guestpopopt').slideDown();

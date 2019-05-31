@@ -88,7 +88,10 @@
                     let allergies = document.getElementById('allergies').value;
                     let foodpref = document.getElementById('foodpref').value;
                     let numguests = document.getElementById('numguests').value;
-                    let guestname = document.getElementById('guestname').value;
+                    let guestname = '';
+                    if (numguests == '2'){
+                        guestname = document.getElementById('guestname').value;
+                    }
 
                     document.getElementById('subbtn').onclick = function(){}
                     

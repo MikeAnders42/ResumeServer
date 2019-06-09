@@ -23,6 +23,15 @@ h2 {
   text-align: center;
 }
 
+.reg_block{
+  font-family: 'Georgia';
+  font-size: 22px;
+}
+
+#reg_label{
+  color: #54a892;
+}
+
 img {
   margin-left: auto;
   margin-right: auto;

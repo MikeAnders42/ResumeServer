@@ -23,13 +23,13 @@ h2 {
 }
 
 .reg_block{
-  font-family: 'Georgia';
-  font-size: 53px;
-  display: inline-block;
 }
 
 #reg_label{
   color: #54a892;
+  font-family: 'Georgia';
+  font-size: 18px;
+  display: inline-block;
 }
 
 img {

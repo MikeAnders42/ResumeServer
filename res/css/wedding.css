@@ -80,8 +80,13 @@ img {
   font-size: 60px;
 }
 .container h2 {
-  font-size: 33px;
-  margin: 20px auto;
+  font-size: 22px;
+  text-align: center;
+}
+.container h3 {
+  font-family: 'Georgia';
+  font-size: 18px;
+  color: #54a892;
   text-align: center;
 }
 .container img {
@@ -98,12 +103,6 @@ img {
   line-height: 1.5;
   margin: 0;
   padding: 0px 40px 20px;
-  text-align: center;
-}
-.container h3 {
-  font-family: 'Muli';
-  margin: 0;
-  padding: 0;
   text-align: center;
 }
 .container .register img {

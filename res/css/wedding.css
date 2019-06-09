@@ -79,6 +79,11 @@ img {
 .container h1 {
   font-size: 60px;
 }
+.container h2 {
+  font-size: 33px;
+  margin: 20px auto;
+  text-align: center;
+}
 .container img {
   display:block;
   margin-left: auto;
@@ -93,12 +98,6 @@ img {
   line-height: 1.5;
   margin: 0;
   padding: 0px 40px 20px;
-  text-align: center;
-}
-.container h2 {
-  font-family: 'Great Vibes';
-  font-size: 33px;
-  margin: 20px auto;
   text-align: center;
 }
 .container h3 {

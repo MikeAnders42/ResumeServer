@@ -25,6 +25,7 @@ h2 {
 .reg_block{
   font-family: 'Georgia';
   font-size: 53px;
+  display: inline-block;
 }
 
 #reg_label{
@@ -68,7 +69,9 @@ img {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+#nav_offset{
+  margin-bottom: 40px;
+}
 .container {
   display: block;
   margin: 0 auto;
@@ -83,6 +86,7 @@ img {
   text-align: center;
 }
 .container h3 {
+  margin-top: -20px;
   font-family: 'Georgia';
   font-size: 18px;
   color: #54a892;

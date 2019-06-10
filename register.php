@@ -19,7 +19,7 @@
     $sql = "SELECT * FROM Registry WHERE Name = '" . $name . "' AND ID = '" . $key . "'";
     $exists = $connect->query($sql);
     if ($exists === FALSE or $exists->num_rows === 0){
-      echo '<div>This link is invalid or expired.' . $name . $key . 'Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
+      echo '<div>This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
       exit;
     }
 
@@ -27,7 +27,7 @@
     if ($connect->query($sql) === TRUE) {
       echo '<div>Thank you for the RSVP. Wedding details are at the link above.</div>';
     } else {
-      echo '<div>This link is invalid or expired. Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
+      echo '<div>This link is invalid or expired.' . $sql . ' Try contacting me by <a href="mikeanders42@gmail.com">email</a>.</div>';
     }
     $connect->close();
   }

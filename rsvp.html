@@ -104,7 +104,7 @@
                             DisplayRSVPMsg(String(this.responseText));
                         }
                     }
-                    xhr.send("key=" + args.key + "&name=" + args.name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests + "&guestname=" + guestsname);
+                    xhr.send("key=" + args.key + "&name=" + args.name + "&allergies=" + allergies + "&foodpref=" + foodpref + "&numguests=" + numguests + "&guestname=" + guestname);
                 }
                 
                 $('#guestpopopt').hide();
@@ -133,6 +133,7 @@
                 </li>
             </ul>
         </nav>
+        <div id='nav_offset'></div>
         <div class="header">
             <h1>
                 Mike & Tina

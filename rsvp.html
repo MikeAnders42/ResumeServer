@@ -89,8 +89,10 @@
                     let foodpref = document.getElementById('foodpref').value;
                     let numguests = document.getElementById('numguests').value;
                     let guestname = '';
+                    let pfoodpref = '';
                     if (numguests == '2'){
                         guestname = document.getElementById('guestname').value;
+                        pfoodpref = document.getElementById('pfoodpref').value;
                     }
 
                     document.getElementById('subbtn').onclick = function(){}
@@ -108,11 +110,14 @@
                 }
                 
                 $('#guestpopopt').hide();
+                $('#guestpopfopt').hide();
                 document.getElementById('numguests').onchange = function(){
                     if (document.getElementById('numguests').value == '2'){
                         $('#guestpopopt').slideDown();
+                        $('#guestpopfopt').slideDown();
                     } else {
                         $('#guestpopopt').slideUp();
+                        $('#guestpopfopt').slideUp();
                     }}
                 }, 100);
 
@@ -139,7 +144,7 @@
                 Mike & Tina
             </h1>
             <h2>
-                August 19, 2019
+                August 17, 2019
             </h2>
         </div>
         <div class="container">
@@ -168,7 +173,26 @@
                                 <option class='test' value="Vegetarian">Vegetarian</option>
                                 </select>
                                 </div></div><br></br>
-                    
+
+                        <div class='line' id='guestpopfopt'>
+                            <label> +1 Food Preference: </label>
+                            <div class="styled-select blue semi-square">
+                                <select id='pfoodpref'>
+                                <option class='test' value="None">-</option>
+                                <option class='test' value="Meat">Meat</option>
+                                <option class='test' value="Vegetarian">Vegetarian</option>
+                                </select>
+                                </div></div><br></br>          
+
+                        <div class='line'>
+                            <label> Food Preference: </label>
+                            <div class="styled-select blue semi-square">
+                                <select id='foodpref'>
+                                <option class='test' value="None">-</option>
+                                <option class='test' value="Meat">Meat</option>
+                                <option class='test' value="Vegetarian">Vegetarian</option>
+                                </select>
+                                </div></div><br></br>
                         <div class='line'>
                             <label> Allergies: </label><input id="allergies"></input><br></div>
                     </div>

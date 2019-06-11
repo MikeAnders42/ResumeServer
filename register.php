@@ -4,6 +4,7 @@
   $numguests = $_POST['numguests'];
   $guestname = $_POST['guestname'];
   $foodpref = $_POST['foodpref'];
+  $pfoodpref = $_POST['pfoodpref'];
   $allergies = $_POST['allergies'];
 
   $host_name = 'db5000081171.hosting-data.io';
@@ -23,7 +24,7 @@
       exit;
     }
 
-    $sql = 'UPDATE Registry SET NumGoing = ' . $numguests . ", GuestName = '" . $guestname . "', FoodPref = '" . $foodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "' AND ID = '" . $key . "'";
+    $sql = 'UPDATE Registry SET NumGoing = ' . $numguests . ", GuestName = '" . $guestname . "', FoodPref = '" . $foodpref . "', GuestFoodPref = '" . $pfoodpref . "', Allergies = '" . $allergies . "' WHERE Name = '" . $name . "' AND ID = '" . $key . "'";
     if ($connect->query($sql) === TRUE) {
       echo '<div>Thank you for the RSVP. Wedding details are at the link above.</div>';
     } else {

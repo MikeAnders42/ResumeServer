@@ -135,7 +135,15 @@ figcaption{
   margin-left: auto;
   margin-right: auto;
 }
-.calendar{
+#scheddivline{
+  border-bottom: 1px solid #9AA2A7DD;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+}
+.mlacontainer{
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
@@ -154,4 +162,14 @@ figcaption{
 ul{
   margin-top: 5px;
   margin-bottom: 10px;
+}
+.clusttitle{
+  font-size: 20px;
+}
+.clustpar{
+  padding-left: 20px;
+}
+#clustdesc{
+  width: 800px;
+  padding: 30px;
 }

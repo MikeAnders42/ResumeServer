@@ -19,7 +19,7 @@
       <div id="clustdesc" class="mlacontainer">
           <b class="clusttitle">Goal:</b><br>
           <p class="clustpar">
-            Create a tool that, given a body of unstructured text documents and a user prompt, first clusters the documents based on their semantic relationship to the prompt, then generates descriptive labels for each cluster. For example, the prompt "positive phone reviews" might return Amazon reviews clustered on "battery life," "connection," "camera." A successful tool will filter the documents, group them, and provide meaningful descriptions. This will require knowledge of text embeddings, clustering algorithms, text generation, and semantic relevancy tests.
+            Create a tool that, given a body of unstructured text documents and a user prompt, first clusters the documents based on their semantic relationship to the prompt, then generates descriptive labels for each cluster. For example, the prompt "positive phone reviews" might return Amazon reviews clustered on "battery life," "connection," and "camera." A successful tool will filter the documents, group them, and provide meaningful descriptions. This will require knowledge of text embeddings, clustering algorithms, text generation, and semantic relevancy tests.
           </p>
           <p class="clustpar">
             Because a particular similarity metric does not entail predictability or semantic usefulness, a successful tool must learn semantically useful features to cluster on. The defining metric for this tool's success will be how well labels can be used to locate clusters - that is, how accurately you can remake a cluster by performing a relevancy search over the body of texts using that cluster's label. A tool that describes accurately should also filter well, since the two operations are effectively the inverses of each other.
@@ -27,9 +27,9 @@
           <b class="clusttitle">Specifications:</b><br>
           <p class="clustpar">
             <ol>
-                <li>This tool should return only relevant documents</li> 
+                <li>This tool should return only relevant documents</li>
+                <li>The targeted document size is 2-8 paragraphs</li>
                 <li>Clusters should have semantically meaningful relationships, i.e. not on the basis that all documents in a cluster used the word "should" with the same frequency</li>
-                <li>Clusters do not need to be flat. Heirarchical clustering is OK</li>
                 <li>Work will be done on common, open source, labelled data sets</li>
                 <li>Open source libraries and code reuse is OK, provided it is properly attributed</li>
             </ol>

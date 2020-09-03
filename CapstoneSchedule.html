@@ -14,23 +14,22 @@
     </head>
     <body>
 
-      <h2 id='capTitle'>Explainable Text Clustering</h2>
+      <h2 id='capTitle'>Supervised Textual Relevancy - CMS Rule Matching</h2>
       <br>
       <div id="clustdesc" class="mlacontainer">
           <b class="clusttitle">Goal:</b><br>
           <p class="clustpar">
-            Create a tool that, given a body of unstructured text documents and a user prompt, first clusters the documents based on their semantic relationship to the prompt, then generates descriptive labels for each cluster. For example, the prompt "positive phone reviews" might return Amazon reviews clustered on "battery life," "connection," and "camera." A successful tool will filter the documents, group them, and provide meaningful descriptions. This will require knowledge of text embeddings, clustering algorithms, text generation, and semantic relevancy tests.
+            Given a predefined set V of 'definition' texts and a set K of unstructured 'comment' texts where K >> V, segment each comment k &#2208; K and score match the segments to their most relevant definition v &#2208; V. A successful tool will split documents coherently, and match the relevant subsections to their corresponding rule. Useful topics include text classification, text embeddings, semantic relevancy, ontology generation, and clustering algorithms.
           </p>
           <p class="clustpar">
-            Because a particular similarity metric does not entail predictability or semantic usefulness, a successful tool must learn semantically useful features to cluster on. The defining metric for this tool's success will be how well labels can be used to locate clusters - that is, how accurately you can remake a cluster by performing a relevancy search over the body of texts using that cluster's label. A tool that describes accurately should also filter well, since the two operations are effectively the inverses of each other.
+            Because a particular similarity metric does not entail predictability or semantic usefulness, a successful tool must learn semantically useful features to cluster on. The defining metric for this tool's success will be the precision and recall over the labelled document set, the training volume required, and the time to classification.
           </p>
           <b class="clusttitle">Specifications:</b><br>
           <p class="clustpar">
             <ol>
-                <li>This tool should return only relevant documents</li>
-                <li>The targeted document size is 2-8 paragraphs</li>
-                <li>Clusters should have semantically meaningful relationships, i.e. not on the basis that all documents in a cluster used the word "should" with the same frequency</li>
-                <li>Clusters do not need to be flat. Heirarchical clustering is OK. This means documents can belong to multiple clusters</li>
+                <li>This tool should return relevancy scores over all definitions</li>
+                <li>The targeted definition size is 300-3000 characters</li>
+                <li>The targeted comment size is 50-5000 characters</li>
                 <li>Work will be done on common, open source, labelled data sets</li>
                 <li>Open source libraries and code reuse is OK, provided it is properly attributed</li>
             </ol>
@@ -41,28 +40,12 @@
                 <li><a href="https://www.amazon.com/dp/0262133601?tag=inspiredalgor-20#reader_0262133601">Foundations of Statistical Natural Language Processing</a></li>
                 <li><a href="https://web.stanford.edu/~jurafsky/slp3/ed3book.pdf">Speech and Language Processing</a></li>
                 <li><a href="https://www.amazon.com/Applied-Text-Analysis-Python-Language-Aware/dp/1491963042/">Applied Text Analysis with Python</a></li>
-                <li><a href="https://machinelearningmastery.com/deep-learning-for-nlp/">Deep Learning for NLP</a></li>
-            </ol>
-            <div class="subcat">Lectures / Notes</div>
-            <ol>
-                <li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-864-advanced-natural-language-processing-fall-2005/lecture-notes/">General NLP</a></li>
-                <li><a href="http://web.stanford.edu/class/cs224n/">Deep Learning NLP</a></li>
-                <li><a href="https://www.youtube.com/watch?v=OQQ-W_63UgQ&list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6">Stanford Deep Learning NLP Lecture Series</a></li>
-            </ol>
-            <div class="subcat">Academic Papers</div>
-            <ol>
-               <li><a href="https://arxiv.org/pdf/1707.02919.pdf">NLP State-of-the-Field Summary</a></li>
-               <li><a href="http://charuaggarwal.net/text-cluster.pdf">Text Clustering: State-of-the-Field Summary</a></li>
-               <li><a href="http://hanj.cs.illinois.edu/cs412/bk3/10.pdf">Cluster Analysis</a></li>
             </ol>
             <b class="clusttitle">Research Topics:</b><br>
             <ol>
-               <li>DBScan/OPTICS</li>
-               <li>PageRank/HITS</li>
-               <li>Probabilistic Latent Semantic Analysis</li>
-               <li>Entropic Similarity</li>
-               <li>Dot Product Similarity</li>
-               <li>Concept Decomposition</li>
+               <li>TF/IDF</li>
+               <li>Semantic Similarity</li>
+               <li>Word Embeddings</li>
             </ol>
       </div>
       <div id='scheddivline'></div>
@@ -70,39 +53,28 @@
 
       <div class="mlacontainer">
         <div class='item'>
-          <div class="datetitle"><b>Sept. 16th – Sept. 20th</b></div>
+          <div class="datetitle"><b>Sept. 7th – Sept. 11th</b></div>
           Readings<br>
           <ul>
             <li><a href="http://spark-public.s3.amazonaws.com/nlp/slides/intro.pdf">Introduction to NLP</a></li>
             <li><a href="http://spark-public.s3.amazonaws.com/nlp/slides/naivebayes.pdf">Bag of Words Model (slides 1-19)</a></li>
           </ul>
-
-          Python<br>
-          <ul>
-            <li><a href=https://www.learnpython.org/en/Classes_and_Objects>Python - Classes</a></li>
-          </ul>
         </div>
 
         <div class='item'>
-           <div class="datetitle"><b>Sept. 23rd – Sept. 27th</b></div>
+           <div class="datetitle"><b>Sept. 14th – Sept. 18th</b></div>
           Readings<br>
           <ul>
             <li><a href="https://web.stanford.edu/class/cs345a/slides/12-clustering.pdf">Introduction to Custering, K-Means (slides 1-24)</a></li>
             <li><a href="http://www.tfidf.com"> TF-IDF Weighting</a></li>
           </ul>
-
-          Python<br>
-          <ul>
-            <li><a href="https://www.learnpython.org/en/Functions">Python - Functions</a></li>
-          </ul>
         </div>
 
         <div class='item'>
-           <div class="datetitle"><b>Sept. 30th – Oct. 4th</b></div>
+           <div class="datetitle"><b>Sept. 21st – Sept. 25th</b></div>
           Readings<br>
           <ul>
-            <li><a href="http://bjlkeng.github.io/posts/the-expectation-maximization-algorithm/">EM & Gaussian Mixture Models</a></li>
-            <li><a href="http://karlrosaen.com/ml/notebooks/em-coin-flips/">EM Algorithm With Coin Flips</a></li>
+            <li>Naive Bayes - Reading TBD</li>
           </ul>
           Self-Research (1 article, paper, or technique)<br>
           <ul>
@@ -112,12 +84,11 @@
           <ul>
             <li><a href="Capstone/Practice/Grimm.pkl" download>TF-IDF Resources</a></li>
             <li><a href="Capstone/Practice/Text Clustering - TF-IDF K-Means.ipynb" download>TF-IDF Practice</a></li>
-            <li><a href="Capstone/Practice/Text Clustering - TF-IDF K-Means Complete.ipynb" download>TF-IDF Completed</a></li>
           </ul>
         </div>
 
         <div class='item'>
-           <div class="datetitle"><b>Oct. 7th – Oct. 11th</b></div>
+           <div class="datetitle"><b>Sept. 28th – Oct. 2nd</b></div>
           Readings<br>
           <ul>
             <li><a href="https://explosion.ai/blog/deep-learning-formula-nlp">NLP and Deep Learning</a></li>
@@ -128,153 +99,18 @@
             <li>3 Minute Presentations</li>
           </ul>
         </div>
-
+       
         <div class='item'>
-           <div class="datetitle"><b>Oct. 14th – Oct. 18th</b></div>
+           <div class="datetitle"><b>Oct. 5th – Oct. 9th</b></div>
           Readings<br>
           <ul>
-            <li><a href="http://onlinestatbook.com/2/probability/binomial.html">Binomial Distribution</a></li>
-            <li><a href="http://varianceexplained.org/statistics/beta_distribution_and_baseball/">Beta Distribution</a></li>
-            <li><a href="https://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/">LDA Summary</a></li>
-            <li><a href="https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158">LDA In-Depth</a></li>
-          </ul>
-           Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-
-        <div class='item'>
-           <div class="datetitle"><b>Oct. 21st – Oct. 25th</b></div>
-          Readings<br>
-          <ul>
-            <li><a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">RNN & LSTM - Architecture</a></li>
-            <li><a href="https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/">RNN & LSTM - Simple Example</a></li>
-            <li><a href="https://machinelearningmastery.com/develop-neural-machine-translation-system-keras/">RNN & LSTM - OPTIONAL Extended Example</a></li>
-            <li><a href="https://www.aclweb.org/anthology/D16-1204.pdf">LSTM Paper 1 - Caption generation with emphasis on practical training</a></li>
-            <li><a href="https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?referer=https://scholar.google.com/&httpsredir=1&article=4437&context=sis_research">LSTM Paper 2 - Topic assignment by compositing techniques*</a></li>
-         *We'll cover Bahdanau attention next week, for now focus on how it's being composited with the other techniques. What are each layer's inputs? What are the outputs?
+            <li>NGRAM generation - TBD</li>
           </ul>
           Self-Research (1 article, paper, or technique)<br>
           <ul>
             <li>3 Minute Presentations</li>
           </ul>
         </div>
-       
-          <div class='item'>
-           <div class="datetitle"><b>Oct. 28th – Nov. 1st</b></div>
-          Readings<br>
-          <ul>
-            <li><a href="https://arxiv.org/pdf/1409.0473.pdf">Attention Mechanism - Bahdanau et al. 2015</a></li>
-            <li><a href="https://www.tensorflow.org/tutorials/text/nmt_with_attention">Attention Mechanism - Bahdanau Attention Tensorflow Example</a></li>
-            <li><a href="https://bastings.github.io/annotated_encoder_decoder/">Attention Mechanism -  Bahdanau Attention PyTorch Example</a></li>
-            <li><a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Mechanism - Attention is All You Need</a></li>
-            <li><a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">Attention Mechanism - Attention is All You Need Example</a></li>
-            <li><a href="https://deepmind.com/blog/article/alphafold"> OPTIONAL - Alphafold (protein fold prediction using attention-like architecture)</a></li>
-          </ul>
-          Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-       
-         <div class='item'>
-           <div class="datetitle"><b>Nov. 4th – Nov. 8th</b></div>
-          Readings<br>
-          <ul>
-           <li><a href="https://www.cc.gatech.edu/~dyang888/docs/naacl16.pdf">Hierarchical Attention Networks for Document Classification</a></li>
-          </ul>
-          Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-       
-        <div class='item'>
-           <div class="datetitle"><b>Nov. 11th – Nov. 15th</b></div>
-          Readings<br>
-          <ul>
-           <li><a href="https://web.cs.dal.ca/~kallada/stat2450/lectures/Lecture15.pdf">DBScan Simplified (slides 15-35)</a></li>
-           <li><a href="http://www.cs.fsu.edu/~ackerman/CIS5930/notes/DBSCAN.pdf">OPTIONAL - DBScan Formalized</a></li>
-           <li><a href="https://www.dbs.ifi.lmu.de/Publikationen/Papers/OPTICS.pdf">OPTICS: Handling Varying Densities</a></li>
-          </ul>
-          Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-             
-        <div class='item'>
-           <div class="datetitle"><b>Nov. 18th – Nov. 22nd</b></div>
-          Readings<br>
-          <ul>
-           <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=7266FD50EDF594EC3F9B7A1C566FA78C?doi=10.1.1.103.7505&rep=rep1&type=pdf">Clustering Validation Overview</a></li>
-           <li><a href="https://pdfs.semanticscholar.org/2054/29d63883b041436fdf2be8170a1f98fa90da.pdf">OPTIONAL - Clustering Validation Metrics Formalized</a></li>
-          </ul>
-          Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-       
-       
-        <div class='item'>
-           <div class="datetitle"><b>Nov. 25th – Nov. 29th</b></div>
-          Readings<br>
-          <ul>
-           <li><a href="https://www.sciencedirect.com/science/article/pii/S0020025518309952">Anatomy of a Search Engine</a></li>
-           <li><a href="https://www.microsoft.com/en-us/research/uploads/prod/2017/06/INR-061-Mitra-neuralir-intro.pdf">Information Recall (Chapter 4, p. 44-54)</a></li>
-          </ul>
-          Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-      
-        <div class='item'>
-           <div class="datetitle"><b>Dec. 23rd – Dec. 27th</b></div>
-          Readings<br>
-          <ul>
-           <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KDTree.html#sklearn.neighbors.KDTree">sklearn - KD Tree</a></li>
-           <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.BallTree.html#sklearn.neighbors.BallTree">sklearn - Ball Tree</a></li>
-           <li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html">sklearn - Distance Metric</a></li>
-           <li><a href="https://arxiv.org/vc/arxiv/papers/1603/1603.09320v1.pdf">OPTIONAL - Small World Graphs</a></li>
-          </ul>
-          Challenge: prove Cosine Similarity x * y / (||x|| * ||y||) and Euclidean Distance &#8730;(x - y)<sup>2</sup> produce the same ordering on normalized vectors<br><br>
-          Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-  
-        <div class='item'>
-           <div class="datetitle"><b>Dec. 30th – Jan. 3rd</b></div>
-          Readings<br>
-          <ul>
-           <li><a href="https://arxiv.org/pdf/1606.07608.pdf">Query Expansion with Word Embeddings</a></li>
-           <li><a href="http://www.abdelali.net/ref/Lavrenko01RelevanceModels.pdf">OPTIONAL - Relevance-Based Language Models (RM)</a></li>
-           <li><a href="http://people.cs.vt.edu/~jiepu/cs5604_fall2018/10_qm.pdf">OPTIONAL - RM Lecture Notes (slides 17-25)</a></li>
-           <li><a href="https://www.nltk.org/api/nltk.lm.html#training">OPTIONAL - NLTK RM3 API </a></li>
-          </ul>
-         Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-       
-        <div class='item'>
-           <div class="datetitle"><b>Feb. 3rd – Feb. 7th</b></div>
-          Readings<br>
-          <ul>
-           <li><a href="http://infolab.stanford.edu/~backrub/google.html">PageRank</a></li>
-           <li><a href="https://www.cs.cornell.edu/people/tj/publications/joachims_02c.pdf">Optimizing Search Engines using Clickthrough Data</a></li>
-          </ul>
-         Self-Research (1 article, paper, or technique)<br>
-          <ul>
-            <li>3 Minute Presentations</li>
-          </ul>
-        </div>
-       
       </div>
   
         <footer>

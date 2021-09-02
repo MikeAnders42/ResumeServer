@@ -14,53 +14,40 @@
     </head>
     <body>
 
-      <h2 id='capTitle'>Supervised Textual Relevancy - CMS Rule Matching</h2>
+      <h2 id='capTitle'>Automated Onotology Generation</h2>
       <br>
       <div id="clustdesc" class="mlacontainer">
           <b class="clusttitle">Goal:</b><br>
           <p class="clustpar">
-            Given a predefined set V of 'definition' texts and a set K of unstructured 'comment' texts where |K| >> |V|, segment each comment k &#8712; K and match the segments to their most relevant definition v &#8712; V. A successful tool will split documents coherently, and match the relevant subsections to their corresponding rule. Useful topics include text classification, text embeddings, semantic relevancy, ontology generation, and clustering algorithms.
+            Create an algorithm to identify topically salient entities within a document corpus and organize them according to a predefined set of semantic relations: hyper/hyponymy, syn/antonymy, and related-to.
           </p>
           <p class="clustpar">
-            Because a particular similarity metric does not entail predictability or semantic usefulness, a successful tool must learn semantically useful features to match on. The defining metrics for this tool's success will be the precision and recall over the labelled document set, the training volume required, and the time to classification.
+            Because "topically salient" is not well-defined, it will be approximated using expert-curated ontologies. Entity relations will likewise be evaluated against these ontologies, as well as manually reviewed by subject matter experts.
           </p>
           <b class="clusttitle">Specifications:</b><br>
           <p class="clustpar">
             <ol>
                 <li>This tool should return relevancy scores over all definitions</li>
-                <li>The targeted definition size is 300-3000 characters</li>
-                <li>The targeted comment size is 50-5000 characters</li>
-                <li>All code should be uploaded to the <a href="https://github.com/milanderson/LMI-Capstone-1.git/">project github</a></li>
-                <li>Work will be done using the public <a href="https://beta.regulations.gov/">CMS Rules and Comments</a></li>
-                <li>Formatted rules and comments, annotations, and ontologies can be found <a href="/data/CMS/">here</a></li>
+                <li>Policy corpuses will be ~100-10000 pages in length</li>
+                <li>All code should be uploaded to the <a href="https://github.com/milanderson/LMI-Capstone-2021/">project github</a></li>
+                <li>Work will be done using the public <a href="https://beta.regulations.gov/">CMS Rules and Comments</a> and <a href="/">TBD</a></li>
+                <li>Formatted ontologies can be found <a href="/">TBD</a></li>
                 <li>Open source libraries and code reuse is OK, provided it is properly attributed</li>
             </ol>
           </p>
          <b class="clusttitle">Project Outline</b>
          <p class="clustpar">
-           <div style="text-indent: 30px;"><b>Phase 1 - ElasticSearch Benchmarking</b></div>
+           <div style="text-indent: 30px;"><b>Ontology Generation</b></div>
            <ul>
-             <li>Benchmark ElasticSearch results using</li>
+             <li>N-Gram Extraction, Relevancy Weighting</li>
              <ul>
-               <li>Rule-splitting heuristics</li>
-               <li>Text splitting heuristics</li>
-               <li>Stop Words</li>
-               <li>Synonyms</li>
-               <li>N-grams</li>
+                 <li>Formatting/Regex Approaches</li>
+                 <li>Statistical Approaches</li>
              </ul>
-           </ul>
-           <div style="text-indent: 30px;"><b>Phase 2 - Keyword &amp; Ontology Generation</b></div>
-           <ul>
-             <li>Naive Bayes Keyword Extraction</li>
+             <li>Relationship Identification</li>
              <ul>
-                 <li>Minimum training threshold</li>
-                 <li>Bootstrapping approaches</li>
-             </ul>
-             <li>Automated Ontology Generation</li>
-             <ul>
-               <li>Synonym/Antonym detection</li>
-               <li>Broader/narrower</li>
-               <li>N-gram extraction</li>
+               <li>Syntactic patterns</li>
+               <li>Deep-learning and word embeddings</li>
              </ul>
            </ul>
           </p>
